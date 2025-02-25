@@ -1,5 +1,35 @@
 # Corner Grocer Item Tracker
 
+## Table of Contents
+
+- [Corner Grocer Item Tracker](#corner-grocer-item-tracker)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Main Menu](#main-menu)
+    - [Problem Statement](#problem-statement)
+  - [What Was Done Well](#what-was-done-well)
+  - [Areas for Improvement](#areas-for-improvement)
+  - [Challenges and How They Were Overcome](#challenges-and-how-they-were-overcome)
+  - [Transferable Skills Gained](#transferable-skills-gained)
+  - [Maintainability, Readability, and Adaptability](#maintainability-readability-and-adaptability)
+  - [Features](#features)
+    - [Frequency List Display](#frequency-list-display)
+    - [Histogram Display](#histogram-display)
+  - [Installation](#installation)
+  - [Compilation and Execution](#compilation-and-execution)
+    - [Using a C++ Compiler (G++)](#using-a-c-compiler-g)
+    - [Using Visual Studio](#using-visual-studio)
+    - [Usage](#usage)
+      - [Lookup Functionality - Singular Item](#lookup-functionality---singular-item)
+      - [Item Not Found](#item-not-found)
+      - [Exit Confirmation](#exit-confirmation)
+    - [Testing](#testing)
+      - [Successful Tests Passing](#successful-tests-passing)
+      - [All Tests Passed, Program Starting](#all-tests-passed-program-starting)
+  - [Folder Structure](#folder-structure)
+  - [Contributions](#contributions)
+  - [License](#license)
+
 ## Overview
 
 The **Corner Grocer Item Tracker** is a C++ program designed to analyze grocery sales data. It reads an input file containing purchased items, calculates purchase frequencies, displays item counts in both list and histogram formats, and stores the results in a backup file (`frequency.dat`). The program ensures efficient data processing while maintaining clean, modular, and testable code.
@@ -7,6 +37,46 @@ The **Corner Grocer Item Tracker** is a C++ program designed to analyze grocery 
 ### Main Menu
 
 ![Main Menu](Screenshots/screenshot_1_main_menu.png)
+
+### Problem Statement
+
+This project addresses the **need for tracking inventory trends** at a grocery store. By analyzing the frequency of item purchases, store managers can optimize product placement and inventory management. The program provides **a user-friendly interface** to query item purchase frequencies, making data easily accessible.
+
+## What Was Done Well
+
+One of the **strongest aspects** of this project is the **modular design**. The program is structured using **separate classes** (`ItemTracker`, `Utility`, `Tests`) to maintain clarity and improve maintainability. Another **key strength** is the **automatic test execution** before launching the interactive menu, ensuring errors are detected early. Additionally, the program effectively handles **case insensitivity** and **plural-to-singular conversions**, making it more user-friendly.
+
+## Areas for Improvement
+
+While the program is functional, **a few enhancements** could improve efficiency and security:
+
+- **Performance Optimization**: The program currently iterates over items multiple times for certain operations. Using **unordered maps** more efficiently could reduce lookup times.
+- **Expanded Input Validation**: Additional validation could detect incorrect formatting in the input file before processing.
+- **Logging**: Implementing a **logging mechanism** for error handling would enhance debugging and troubleshooting.
+
+## Challenges and How They Were Overcome
+
+The most challenging aspect was implementing **case-insensitive and plural-sensitive lookups** in `getClosestMatch()`. The solution involved **normalizing all inputs** before comparison and applying **string manipulation techniques** to match singular and plural variations. Debugging file path issues in a **cloud-based Visual Studio environment** also required troubleshooting techniques, such as **printing working directories** and ensuring relative paths were used.
+
+To overcome these challenges, I relied on **official C++ documentation**, **online C++ forums**, and **debugging best practices**. I also refined my approach by testing edge cases extensively.
+
+## Transferable Skills Gained
+
+This project reinforced **several key programming skills** that are transferable to future coursework and projects:
+
+- **Modular and Object-Oriented Programming (OOP)**: Designing reusable and well-structured code.
+- **File Handling in C++**: Efficiently reading and writing files.
+- **Automated Testing**: Writing test cases to validate program logic.
+- **Input Validation and Error Handling**: Ensuring robustness in user input processing.
+
+## Maintainability, Readability, and Adaptability
+
+The program was designed to be **easily maintainable and adaptable**. Key practices include:
+
+- **Consistent Coding Standards**: Proper indentation, meaningful variable names, and structured functions.
+- **Inline Documentation**: Comments are used to explain **complex logic** and enhance code readability.
+- **Separation of Concerns**: Dividing responsibilities among different classes (`ItemTracker`, `Utility`, `Tests`) makes future modifications easier.
+- **Configurable File Handling**: Using relative file paths ensures portability across different systems.
 
 ## Features
 
