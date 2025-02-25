@@ -1,0 +1,10 @@
+Apples
+Bananas
+123Oranges
+Milk!
+Eggs
+Cranberries
+# InvalidData
+@SpecialItem
+Zucchini
+Peas
